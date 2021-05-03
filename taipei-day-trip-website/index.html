@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+    <title>台北一日遊</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <script src="../static/week2.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<!--手機概念必須加上這行-->
+
+</head>
+
+<body>
+    <!-- ... 第一個div放台北一日遊到登入註冊 ... -->
+    <nav>
+        <div class="top">
+            <h1>台北一日遊</h1>
+            <div class="rightpart">
+                <div class="schedule">預定行程</div>
+                <div class="user">登入/註冊</div>
+            </div>
+        </div>
+    </nav>  
+    <!-- ... 第二個div放享受一日休閒 ... -->
+    <div class="loge">
+        <div class="logomax1200">
+            <div class="text">
+                <div class="relax">輕鬆享受台北一日休閒</div>
+                <div class="city">探索每個角落，體驗城市的深度旅遊行程</div>
+                <form class="searchBox">
+                    <input type="text" placeholder="輸入景點名稱查詢">
+                    <!-- <button > 
+                        <div class="search">
+                    </button> -->
+                    <span class="search">
+                </form>
+            </div>
+            <div class="centerPicture">
+                <!-- <img src="../static/welcom.png"> -->
+            </div>
+        </div>
+
+    </div>
+    <!-- ... 第三個div做的事情是創造box處理裡面的圖片 ... -->
+    <div id="bigbox">
+
+    </div>
+    <footer>
+        <p>COPYRIGHT © 2021 台北一日遊</p>
+    </footer>
+    <!-- <script>
+        window.onload = function getData() {
+
+            var req = new XMLHttpRequest();
+            req.open("get", "/api/attractions?page=0");
+            req.onload = function () {
+                //console.log(this.responseText);
+                //確定抓到資料了
+                var data = JSON.parse(this.responseText);
+                console.log(data.data)
+                //抓到名字了
+                // var pictureName=data.data[1].name
+                // console.log(pictureName)
+                //當作最外面放圖片跟文字的箱子
+                //console.log(data.data[0].images)
+                //發現印出來的網址型態是字串
+                //console.log(typeof(data.data[0].images))
+                //先把字串切割變成陣列
+                for(i=0;i<data.data.length;i++){
+                var imagesUrl =data.data[i].images.split(",")
+                console.log(imagesUrl[1])
+                var pictureName=data.data[i].name
+                console.log(pictureName)
+                var pictureMrt=data.data[i].mrt
+                console.log(pictureMrt)
+                var pictureCategory=data.data[i].category
+                console.log(pictureCategory)
+
+                    var bigbox=document.getElementById("bigbox");
+                    bigbox.classList.add("bigbox")
+                    var box=document.createElement("div")
+                    box.classList.add("box")
+                    var picture =document.createElement("img");
+                    // picture.src=imagesUrl[1];
+                    picture.src="http://"+imagesUrl[1].split("'")[1];
+                    picture.classList.add("picture");
+                    box.appendChild(picture);
+                    bigbox.append(box);
+                    //這裡創名字的文字
+                    let name=document.createElement("div");
+                    name.classList.add("name");
+			        name.appendChild(document.createTextNode(pictureName));
+                    box.appendChild(name);
+                    bigbox.appendChild(box);
+                    //這裡創放分類跟捷運站的箱子
+                    let textBox=document.createElement("div");
+                    textBox.classList.add("textBox");
+                    //這裡創捷運的文字
+                    let mrt=document.createElement("div");
+                    mrt.classList.add("mrt");
+                    mrt.appendChild(document.createTextNode(pictureMrt));
+                    //這裡創分類的文字
+                    let category=document.createElement("div");
+                    category.classList.add("category");
+                    category.appendChild(document.createTextNode(pictureCategory));
+
+                    textBox.appendChild(category);
+                    box.appendChild(category);
+                    bigbox.appendChild(box);
+
+                    textBox.appendChild(mrt);
+                    box.appendChild(mrt);
+                    bigbox.appendChild(box);
+                    
+
+
+                };
+            };//onload 資料回傳可以方便弄資料
+            req.send();//送出連線
+        };
+
+    </script> -->
+</body>
+
+</html>
