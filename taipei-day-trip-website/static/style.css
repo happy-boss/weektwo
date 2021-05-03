@@ -104,8 +104,8 @@ button{
 }
 
 .centerPicture{
-	background: url("./welcom.png");
-	/* margin-left: 54%; */
+	/* background: url("welcom.png"); */
+	margin-left: 54%;
 	
 }
 
